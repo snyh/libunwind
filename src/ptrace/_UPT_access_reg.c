@@ -34,7 +34,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
 # include "tdep-ia64/rse.h"
 #endif
 
-#if HAVE_DECL_PTRACE_SETREGSET
+#if HAVE_DECL_PTRACE_SETREGSET && !defined(__sw_64__) && !defined(__mips__)
 #include <sys/uio.h>
 int
 _UPT_access_reg (unw_addr_space_t as, unw_regnum_t reg, unw_word_t *val,
